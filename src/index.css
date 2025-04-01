@@ -1,0 +1,92 @@
+@import "tailwindcss";
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Space Grotesk", sans-serif;
+  background: linear-gradient(
+    to bottom,
+    #facc15,
+    #fefce8
+  ) !important; /* Kuning ke Putih */
+  color: #1f2937; /* Warna teks lebih gelap agar kontras */
+  color: #f3f4f6;
+}
+
+@layer utilities {
+  @keyframes blink {
+    0%,
+    100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+    }
+  }
+
+  .animate-blink {
+    animation: blink 0.8s step-end infinite;
+  }
+
+  @keyframes loading {
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(250%);
+    }
+  }
+
+  .animate-loading-bar {
+    animation: loading 0.8s ease infinite;
+  }
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+h1 {
+  background: linear-gradient(90deg, #000000, #b6710a);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+button,
+.btn {
+  background-color: #ffcc00;
+  color: #0a0a0a;
+  border: 2px solid #ff9900;
+  transition: all 0.3s;
+}
+
+button:hover,
+.btn:hover {
+  background-color: #068330;
+  border-color: #0a3d94;
+}
+
+.navbar {
+  background: rgba(246, 0, 0, 0.9);
+  border-bottom: 2px solid #ffcc00;
+}
+
+.highlight {
+  color: #ffcc00;
+}
+
+.border-accent {
+  border: 2px solid #ffcc00;
+}
+
+.shadow-accent {
+  box-shadow: 0px 4px 10px rgba(255, 204, 0, 0.5);
+}
